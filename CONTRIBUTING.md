@@ -1,6 +1,6 @@
 # Contributing
 
-Welcome to Datum! We're super excited to have you here. This document contains the best practices for contributing to our repositories.
+Welcome to Datum! We're super excited to have you here. This document contains the best practices for contributing to our repositories. Please note that as of the time of writing (10/29/2023) most of the repositories /code in the organization is a work in progress and not safe to run unless you understand the experimental nature of it. Please reach out to @matoszz with any questions, or email info@datum.net. 
 
 ## Filing an Issue
 
