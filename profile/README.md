@@ -1,6 +1,6 @@
 # Welcome to Datum!
 
-[Datum](https://docs.datum.net/overview/datum) is an open source project committed to making it easier for people to build, operate, and scale cloud-based businesses. Our jam is foundational tooling, and we get excited about reducing toil for developers and unlocking new value up the chain.
+Datum is an open source project committed to making it easier for people to build, operate, and scale cloud-based businesses. Our jam is foundational tooling, and we get excited about reducing toil for developers and unlocking new value up the chain.
 
 Areas of focus include:
 - **Users & Access** - think data model, access management, and baseline protection against fraud / account takeover
