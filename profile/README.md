@@ -1,24 +1,20 @@
-# Welcome to Datum!
-Datum is on a mission to connect people, networks & applications with the ecosystems that unlock their advantage. To make this possible we’re:
+![A branded wallpaper image for Datum's GitHub profile](https://github.com/user-attachments/assets/52abfdb9-416e-4d32-9808-896826a3a7f7)
 
-- building a network cloud for software, backed by open source
-- reimagining private connectivity for the next wave of participants
-- creating open tools to help service and technology providers scale
+At Datum we're on a mission to connect people, networks & applications with the ecosystems that unlock their advantage. 
 
-If you'd like to learn more about our efforts, please visit [our website](https://www.datum.net). 
+## Our focus
 
-## About us
-Datum was founded by [Zac Smith](https://www.linkedin.com/in/zsmith/) and [Jacob Smith](https://www.linkedin.com/in/jacobsmith79/), cloud infrastructure veterans and open source champions who happen to be former classical musicians. After their last company (Packet) was acquired by [Equinix](https://www.equinix.com/), they fell in love with the power of its neutral strategy and rich connectivity ecosystem, but noticed how cloud-first companies (as well as technology-led enterprises and many service providers) struggled to access that value and harness it to their advantage. With that, the beginning of an idea was born. 
+Datum helps technology-led companies connect with each other and their customers. We're working on the following:  
+- A network cloud built for software, backed by open source
+- Reimagining private connectivity for the next wave of participants
+- Creating open tools to help service and technology providers scale
 
-Fast forward a few years, and Datum is now working to reimagine how global service and technology providers can better connect with each other and their customers. 
+If you'd like to learn more, please visit [our website](https://www.datum.net). 
 
-## Open source
-A foundational part of our ethos is to do work in the open. Here are a few notes to clarify that:
+## Get involved
 
-- We're building our core platform under a Business Source License (BSL), since our monetization strategy includes an operated cloud service
-- We believe that unless you're trying to run a directly competing service, you should be able to leverage Datum projects however you wish
-- Native federation and partner enablement are foundational to our work
-- We're focused on building value around network workloads (OSS and proprietary), networking primitives, private connectivity, & ecosystem discovery 
-- We're also developing a control plane for product-led companies called Datum OS (currently private while it matures)
-  
-If you're passionate about something we're working on, please reach out or open an issue on one of our repos. 🚀
+If you choose to contribute to any of our projects, we would love to work with you to ensure a great experience.
+
+- Follow [us on LinkedIn](https://www.linkedin.com/company/datum-cloud/).
+- Read and subscribe to the [Datum blog](https://www.datum.net/blog/).
+- For general discussions, join us on the [official Slack](https://slack.datum.net/) team.
