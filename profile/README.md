@@ -1,13 +1,15 @@
 ![A branded wallpaper image for Datum's GitHub profile](https://github.com/user-attachments/assets/52abfdb9-416e-4d32-9808-896826a3a7f7)
 
-At Datum we're on a mission to connect people, networks & applications with the ecosystems that unlock their advantage. 
+At Datum, we are on a mission to connect the top 1-2k technology producers, providers, and consumers (PPC's) with the ecosystems that power their advantage. 
 
 ## Our focus
+To make our vision possible we’re building a network cloud that you can take anywhere, backed by open source. Key features include:
 
-Datum helps technology-led companies connect with each other and their customers. We're working on the following:  
-- A network cloud built for software, backed by open source
-- Reimagining private connectivity for the next wave of participants
-- Creating open tools to help service and technology providers scale
+- A core set of traffic and security services: DNS, WAF, Global LB, Cloud Connectivity, etc
+- Available to use on Datum’s global cloud, with scaled network capacity
+- Federated (private) availability zones that can be connected to Datum’s cloud
+- A partner friendly model that removes margin-stacking on 3rd party technology
+- A reimagined interface for private application and ecosystem interconnections
 
 If you'd like to learn more, please visit [our website](https://www.datum.net). 
 
@@ -17,4 +19,4 @@ If you choose to contribute to any of our projects, we would love to work with y
 
 - Follow [us on LinkedIn](https://www.linkedin.com/company/datum-cloud/).
 - Read and subscribe to the [Datum blog](https://www.datum.net/blog/).
-- For general discussions, join us on the [official Slack](https://slack.datum.net/) team.
+- For general discussions, join us on the [Datum Community Slack](https://slack.datum.net/) team.
