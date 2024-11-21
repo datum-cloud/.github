@@ -5,11 +5,13 @@ At Datum, we are on a mission to connect the top 1-2k technology producers, prov
 ## Our focus
 To make our vision possible we’re building a network cloud that you can take anywhere, backed by open source. Key features include:
 
-- A core set of traffic and security services: DNS, WAF, Global LB, Cloud Connectivity, etc
-- Available to use on Datum’s global cloud, with scaled network capacity
-- Federated (private) availability zones that can be connected to Datum’s cloud
-- A partner friendly model that removes margin-stacking on 3rd party technology
-- A reimagined interface for private application and ecosystem interconnections
+- Traffic management with service chainning to offload Internet and app traffic and route securely in private, controlled paths to clouds, SaaS services or other destinations
+- Flexible ways to bring traffic into the Datum Network Cloud, including authoritative DNS, built in global proxy / LB, DDoS filtering, GRE or IPSec tunnels and more
+- Leverage Datum’s global managed cloud for data plane or bring your own cloud (BYOC) zones via a standard Kubernetes operator deploy model
+- BYOC zones can be connected to the Datum Cloud control plane for DevOps, observability, authorization control and more
+- Partner friendly model that supports deploy, manage and lifecycle of commercial and open source NFV technologies
+- Commercial support for partner marketplace transactions that remove margin-stacking on 3rd party technology
+- A reimagined interface and data model for private application and ecosystem interconnections
 
 If you'd like to learn more, please visit [our website](https://www.datum.net). 
 
