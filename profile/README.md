@@ -21,4 +21,4 @@ If you choose to contribute to any of our projects, we would love to work with y
 
 - Follow [us on LinkedIn](https://www.linkedin.com/company/datum-cloud/).
 - Read and subscribe to the [Datum blog](https://www.datum.net/blog/).
-- For general discussions, join us on the [Datum Community Slack](https://inviter.co/datum) team.
+- For general discussions, join us on the [Datum Community Slack](https://slack.datum.net) team.
