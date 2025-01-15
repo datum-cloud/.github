@@ -1,8 +1,7 @@
 <p align="center">
-  <img width="300" src="[https://user-images.githubusercontent.com/20115649/176922807-fb92327a-15d5-4568-a4e7-78093cea045e.svg?sanitize=true#gh-light-mode-only](https://github.com/user-attachments/assets/4379c96c-edd2-42e1-8ed4-6c20e9ebb291?sanitize=true#gh-light-mode-only)">
-  <img width="300" src="[https://user-images.githubusercontent.com/20115649/176922819-61dfb644-529f-4f81-a577-7daa47185300.svg?sanitize=true#gh-dark-mode-only](https://github.com/user-attachments/assets/65693b13-494b-4c51-a94d-86d4fe79b82b?sanitize=true#gh-dark-mode-only)">
+  <img width="300" src="[https://github.com/user-attachments/assets/4379c96c-edd2-42e1-8ed4-6c20e9ebb291?sanitize=true#gh-light-mode-only">
+  <img width="300" src="[https://github.com/user-attachments/assets/65693b13-494b-4c51-a94d-86d4fe79b82b?sanitize=true#gh-dark-mode-only">
 </p>
-
 ---
 
 At Datum, we are on a mission to connect the top 1-2k technology producers, providers, and consumers (PPC's) with the ecosystems that power their advantage. 
@@ -26,4 +25,4 @@ If you choose to contribute to any of our projects, we would love to work with y
 
 - Follow [us on LinkedIn](https://www.linkedin.com/company/datum-cloud/).
 - Read and subscribe to the [Datum blog](https://www.datum.net/blog/).
-- For general discussions, join us on the [Datum Community Slack](https://inviter.co/datum) team.
+- For general discussions, join us on the [Datum Community Slack](https://slack.datum.net) team.
