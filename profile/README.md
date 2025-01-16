@@ -9,7 +9,7 @@ At Datum, we are on a mission to connect the top 1-2k technology producers, prov
 ## Our focus
 To make our vision possible we’re building a network cloud that you can take anywhere, backed by open source. Key features include:
 
-- Traffic management with service chainning to offload Internet and app traffic and route securely in private, controlled paths to clouds, SaaS services or other destinations
+- Traffic management with service chaining to offload Internet and app traffic and route securely in private, controlled paths to clouds, SaaS services or other destinations
 - Flexible ways to bring traffic into the Datum Network Cloud, including authoritative DNS, built in global proxy / LB, DDoS filtering, GRE or IPSec tunnels and more
 - Leverage Datum’s global managed cloud for data plane or bring your own cloud (BYOC) zones via a standard Kubernetes operator deploy model
 - BYOC zones can be connected to the Datum Cloud control plane for DevOps, observability, authorization control and more
