@@ -1,6 +1,12 @@
 # Contributing
 
-Welcome to Datum! We're super excited to have you here. This document contains the best practices for contributing to our repositories. Please note that as of the time of writing (10/29/2023) most of the repositories /code in the organization is a work in progress and not safe to run unless you understand the experimental nature of it. Please reach out to @matoszz with any questions, or email info@datum.net. 
+Welcome to Datum! We're super excited to have you here. This document contains the best practices 
+for contributing to our repositories. Please note that as of the time of writing (3/10/2025) most 
+of the repositories /code in the organization is a work in progress and not safe to run unless you 
+understand the experimental nature of it. 
+
+Please reach out on [our community slack](https://slack.datum.net/) or email support@datum.net if 
+you have any questions on how to best contribute. 
 
 ## Filing an Issue
 
@@ -45,4 +51,4 @@ in this organization.
 
 ## Contact
 
-If you have any questions, please reach out to @matoszz
+If you have any questions, please reach out to support@datum.net
