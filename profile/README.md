@@ -8,8 +8,8 @@
 
 Datum is building the world’s first open network cloud — a neutral place where [Alt Clouds](https://link.datum.net/alt-clouds), tech incumbents, and digital leaders can programmatically interact with their unique ecosystem. Run workloads on our global infrastructure, in any of the public clouds, or on your private infrastructure, then leverage Datum’s global “fast path” network to deterministically route and observe traffic, privately connect with partners, and interact with customers. 
 
-- **Mission**: To make 1,000 new hyperscalers by providing an internet built for AI: open, programmable, and designed for what’s next.
-- **Vision**: To be the most trusted way for digital ecosystems to interact — with millions of intelligent, active connections to prove it.
+- **Mission**: To make 1k new hyperscalers by providing an internet built for AI: open, programmable, and designed for what’s next.
+- **Vision**: To be the most trusted way for digital ecosystems to interact, with millions of intelligent connections to prove it.
 
 Datum has a strong belief in transparency and building developer trust. Core components are released under the [AGPLv3 license](https://www.gnu.org/licenses/agpl-3.0.html), giving users full visibility and audit capability, the ability to adapt and self-host if needed, and long-term confidence without vendor lock-in.
 
