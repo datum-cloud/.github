@@ -8,7 +8,7 @@
 
 Datum is building the world’s first open network cloud — a neutral place where [Alt Clouds](https://link.datum.net/alt-clouds), tech incumbents, and digital leaders can programmatically interact with their unique ecosystem. Run workloads on our global infrastructure, in any of the public clouds, or on your private infrastructure, then leverage Datum’s global “fast path” network to deterministically route and observe traffic, privately connect with partners, and interact with customers. 
 
-- **Mission**: To make 1k new hyperscalers by providing an internet built for AI: open, programmable, and designed for what’s next.
+- **Mission**: To help 1k new clouds thrive in the AI era by unlocking "internet superpowers" for every builder
 - **Vision**: To be the most trusted way for digital ecosystems to interact, with millions of intelligent connections to prove it.
 
 Datum has a strong belief in transparency and building developer trust. Core components are released under the [AGPLv3 license](https://www.gnu.org/licenses/agpl-3.0.html), giving users full visibility and audit capability, the ability to adapt and self-host if needed, and long-term confidence without vendor lock-in.
@@ -19,8 +19,8 @@ Datum has a strong belief in transparency and building developer trust. Core com
 
 Great question! You should chat with us if you're an...
 
-- **Alt cloud provider** that needs networking super powers to service customers without building your own network and network teams. 
-- **ISV or SaaS provider** that wants to embed networking capabilities in your offerings to accelerate adoption, meet requirements, etc. 
+- **Alt cloud provider** that needs networking superpowers to service customers without building your own network and network teams. 
+- **ISV or SaaS provider** that wants to embed capabilities in your offerings to accelerate adoption, meet commercial requirements, etc. 
 - **Enterprise customer** that needs telco-style capabilities to manage diverse connectivity for routing, security, privacy and cost issues.
 
 | Challenge | How Datum Helps |
@@ -46,4 +46,4 @@ If you choose to contribute to any of our projects, we would love to work with y
 
 - Follow [us on LinkedIn](https://www.linkedin.com/company/datum-cloud/).
 - Read and subscribe to the [Datum blog](https://www.datum.net/blog/).
-- For general discussions, join us on the [Datum Community Slack](https://slack.datum.net) team.
+- For general discussions, join us on [Discord](https://link.datum.net/discord) or in [GitHub Discussions](https://link.datum.net/discussions).
