@@ -1,54 +1,34 @@
-# Contributing
+# Contributing to Datum Cloud
 
-Welcome to Datum! We're super excited to have you here. This document contains the best practices 
-for contributing to our repositories. Please note that as of the time of writing (3/10/2025) most 
-of the repositories /code in the organization is a work in progress and not safe to run unless you 
-understand the experimental nature of it. 
+Thank you for your interest in contributing! We welcome contributions from the community.
 
-Please reach out on [our community slack](https://slack.datum.net/) or email support@datum.net if 
-you have any questions on how to best contribute. 
+## Contributor License Agreement (CLA)
 
-## Filing an Issue
+Before we can accept non-trivial contributions, we require you to sign a Contributor License Agreement (CLA). This helps ensure clarity about how your work may be used.
 
-If you are using one of our open source projects- you'll likely begin interacting with us by
-filing an issue. Regardless of whether you think the issue is with the project itself, if you're
-having trouble using the project, feel free to file an issue on the repo.
+- **One-time step**: You only need to sign once. Your agreement applies to all future contributions across our organization.
+- **You retain copyright**: The CLA grants us a license to use your contributions; you keep ownership of your work.
+- **Open source**: All contributions remain under this project's open source license.
 
-**If you have a feature request, please file an issue before making a PR.** Everyone's time is
-incredibly valuable, so if you have an idea for a feature, please file an issue. This way we
-can have a discussion with you, and the community, about the design, before you have sunk a
-bunch of time into developing it.
+Our agreement is closely based on the widely used [Apache Individual Contributor License Agreement v2.2](https://www.apache.org/licenses/icla.pdf).
 
-**You do not need to file an issue for small fixes.** If you are fixing a typo or refactoring
-a bit of code, you likely don't need to file an issue. This is a judgement call, and *sometimes*
-we may review your PR and ask you to file an issue if we expect there are larger design decisions
-to be made.
+When you open a pull request, our CLA bot will prompt you to sign if needed. The process is automated via GitHub.
 
-**Each repository has an Issue Template.** This helps us make sure that you can give us the most
-information about your issue upfront, so we can limit the amount of back and forth required
-before your issue can be resolved. Do your best to fill it out, but if you have trouble, it's
-ok to file an incomplete issue template.
+## Code of Conduct
 
-## Making a PR
+Datum follows the [Contributor Covenant](https://www.contributor-covenant.org/) Code of Conduct. You can find a copy in each of our repositories. Violating the Code of Conduct could result in a warning or a ban from any and all repositories in this organization.
 
-**If you are considering filing a pull request, make sure that there's an issue filed for the work
-you'd like to do.** There might be some discussion required! Filing an issue first will help ensure
-that the work you put into your pull request will get merged.
+## How to Contribute
 
-Once your PR is made, it will be labelled *needs review*. A maintainer will review your PR as soon
-as they can. The reviewer may ask for changes- they will mark the PR as *changes requested* and
-*work in progress* and will give you details about the requested changes. Feel free to ask lots of
-questions! The maintainers are there to help you!
+1. Fork the repository and create a branch for your changes.
+2. Make your changes, ensuring they align with our code style and conventions.
+3. Add or update tests as appropriate.
+4. Open a pull request with a clear description of your changes.
+5. Sign the CLA when prompted (for non-trivial contributions).
+6. Address any review feedback.
 
+## Getting Help
 
-## Conduct
-
-Datum follows the [Contributor Covenant Code of Conduct]. You can find a copy in each
-of our repositories. Violating the CoC could result in a warning or a ban to any and all repositories
-in this organization.
-
-[Contributor Covenant Code of Conduct]: CODE_OF_CONDUCT.md
-
-## Contact
-
-If you have any questions, please reach out to support@datum.net
+- Join us on [Discord](https://link.datum.net/discord)
+- Start a discussion in [GitHub Discussions](https://github.com/datum-cloud/enhancements/discussions)
+- Email [support@datum.net](mailto:support@datum.net)
