@@ -1,7 +1,7 @@
 # Individual Contributor License Agreement
 ("Agreement") V2.2
 
-Thank you for your interest in contributing to Datum Cloud. To clarify the intellectual property license
+Thank you for your interest in contributing to Datum open source projects. To clarify the intellectual property license
 granted with Contributions from any person or entity, Datum Technology, Inc.
 must have on file a signed Contributor License Agreement ("CLA")
 from each Contributor, indicating agreement with the license
@@ -145,3 +145,4 @@ inaccurate in any respect.
 ---
 
 *This Agreement is based on the Apache Individual Contributor License Agreement v2.2 (https://www.apache.org/licenses/icla.pdf).*
+
