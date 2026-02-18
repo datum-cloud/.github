@@ -6,13 +6,13 @@ granted with Contributions from any person or entity, Datum Technology, Inc.
 must have on file a signed Contributor License Agreement ("CLA")
 from each Contributor, indicating agreement with the license
 terms below. This agreement is for your protection as a Contributor
-as well as the protection of Datum Technology, Inc. and its users. It does not
+as well as the protection of  Datum Technology, Inc (e.g. Datum) and its users. It does not
 change your rights to use your own Contributions for any other purpose.
 
 You accept and agree to the following terms and conditions for Your
 Contributions (present and future) that you submit to Datum Technology, Inc. Except
-for the license granted herein to Datum Technology, Inc. and recipients of
-software distributed by Datum Technology, Inc., You reserve all right, title,
+for the license granted herein to Datum and recipients of
+software distributed by Datum, You reserve all right, title,
 and interest in and to Your Contributions.
 
 ---
@@ -21,7 +21,7 @@ and interest in and to Your Contributions.
 
 "You" (or "Your") shall mean the copyright owner or legal entity
 authorized by the copyright owner that is making this Agreement
-with Datum Technology, Inc. For legal entities, the entity making a
+with Datum. For legal entities, the entity making a
 Contribution and all other entities that control, are controlled
 by, or are under common control with that entity are considered to
 be a single Contributor. For the purposes of this definition,
@@ -32,14 +32,14 @@ outstanding shares, or (iii) beneficial ownership of such entity.
 
 "Contribution" shall mean any original work of authorship,
 including any modifications or additions to an existing work, that
-is intentionally submitted by You to Datum Technology, Inc. for inclusion
+is intentionally submitted by You to Datum for inclusion
 in, or documentation of, any of the products owned or managed by
-Datum Technology, Inc. (the "Work"). For the purposes of this definition,
+Datum (the "Work"). For the purposes of this definition,
 "submitted" means any form of electronic, verbal, or written
-communication sent to Datum Technology, Inc. or its representatives,
+communication sent to Datum or its representatives,
 including but not limited to communication on electronic mailing
 lists, source code control systems, and issue tracking systems that
-are managed by, or on behalf of, Datum Technology, Inc. for the purpose of
+are managed by, or on behalf of, Datum for the purpose of
 discussing and improving the Work, but excluding communication that
 is conspicuously marked or otherwise designated in writing by You
 as "Not a Contribution."
@@ -48,8 +48,8 @@ as "Not a Contribution."
 
 ## 2. Grant of Copyright License
 
-Subject to the terms and conditions of this Agreement, You hereby grant to Datum Technology, Inc. and to
-recipients of software distributed by Datum Technology, Inc. a perpetual,
+Subject to the terms and conditions of this Agreement, You hereby grant to Datum and to
+recipients of software distributed by Datum a perpetual,
 worldwide, non-exclusive, no-charge, royalty-free, irrevocable
 copyright license to reproduce, prepare derivative works of,
 publicly display, publicly perform, sublicense, and distribute Your
@@ -59,8 +59,8 @@ Contributions and such derivative works.
 
 ## 3. Grant of Patent License
 
-Subject to the terms and conditions of this Agreement, You hereby grant to Datum Technology, Inc. and to
-recipients of software distributed by Datum Technology, Inc. a perpetual,
+Subject to the terms and conditions of this Agreement, You hereby grant to Datum  and to
+recipients of software distributed by Datum a perpetual,
 worldwide, non-exclusive, no-charge, royalty-free, irrevocable
 (except as stated in this section) patent license to make, have
 made, use, offer to sell, sell, import, and otherwise transfer the
@@ -85,8 +85,8 @@ license. If your employer(s) has rights to intellectual property
 that you create that includes your Contributions, you represent
 that you have received permission to make Contributions on behalf
 of that employer, that your employer has waived such rights for
-your Contributions to Datum Technology, Inc., or that your employer has
-executed a separate Corporate CLA with Datum Technology, Inc.
+your Contributions to Datum, or that your employer has
+executed a separate Corporate CLA with Datum.
 
 ---
 
@@ -118,7 +118,7 @@ INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE.
 ## 7. Third-Party Work
 
 Should You wish to submit work that is not Your original creation,
-You may submit it to Datum Technology, Inc. separately from any
+You may submit it to Datum separately from any
 Contribution, identifying the complete details of its source and of
 any license or other restriction (including, but not limited to,
 related patents, trademarks, and license agreements) of which you
@@ -129,7 +129,7 @@ are personally aware, and conspicuously marking the work as
 
 ## 8. Notification
 
-You agree to notify Datum Technology, Inc. of any facts or circumstances of
+You agree to notify Datum of any facts or circumstances of
 which you become aware that would make these representations
 inaccurate in any respect.
 
@@ -145,4 +145,5 @@ inaccurate in any respect.
 ---
 
 *This Agreement is based on the Apache Individual Contributor License Agreement v2.2 (https://www.apache.org/licenses/icla.pdf).*
+
 
