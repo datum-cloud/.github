@@ -15,10 +15,12 @@
 # Public organization landing page — marketing content, not engineering.
 /profile/ @datum-cloud/gtm
 
-# Contribution, licensing and security policy. These carry legal and disclosure
-# commitments and should not be reviewed by whoever is next in the rotation.
+# How vulnerabilities are reported to us.
+/SECURITY.md        @datum-cloud/security
+
+# Contribution and licensing commitments. These are legal text and should not be
+# reviewed by whoever is next in the rotation.
 /CLA.md             @ecv
 /CONTRIBUTING.md    @ecv
 /CODE_OF_CONDUCT.md @ecv
-/SECURITY.md        @ecv
 /LICENSE            @ecv
