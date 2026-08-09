@@ -1,1 +1,26 @@
-* @datumforge/blacksmiths
+# Code owners for datum-cloud/.github.
+#
+# This repository is not a normal service repository. Most of what it holds is
+# inherited by every other repository in the organization as a default community
+# health file, so a change here changes what contributors see org-wide.
+#
+# GitHub applies the LAST matching rule, so the catch-all comes first and the
+# specific paths below it win.
+#
+# Note: an organization cannot supply a default CODEOWNERS. This file governs
+# this repository only. Per-repository coverage is tracked separately.
+
+* @datum-cloud/engineering
+
+# Public organization landing page — marketing content, not engineering.
+/profile/ @datum-cloud/gtm
+
+# How vulnerabilities are reported to us.
+/SECURITY.md        @datum-cloud/security
+
+# Contribution and licensing commitments. These are legal text and should not be
+# reviewed by whoever is next in the rotation.
+/CLA.md             @ecv
+/CONTRIBUTING.md    @ecv
+/CODE_OF_CONDUCT.md @ecv
+/LICENSE            @ecv
