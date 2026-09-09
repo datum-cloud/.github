@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Datum's shared dependency update policy. Updates are listed on each repository's dependency dashboard and open a pull request only when someone asks for them. Security fixes are exempt and open on their own, for the language ecosystems GitHub advisories and OSV cover. Docker tags and Helm charts have no advisory feed in either source, so a security fix for an image or a chart arrives as an ordinary dashboard entry and depends on someone reviewing that dashboard.",
+  "extends": [
+    "config:recommended"
+  ],
+  "dependencyDashboardApproval": true,
+  "osvVulnerabilityAlerts": true,
+  "addLabels": ["renovate"],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "dependencyDashboardApproval": false,
+    "labels": ["security", "renovate"]
+  },
+  "lockFileMaintenance": {
+    "dependencyDashboardApproval": false
+  }
+}
