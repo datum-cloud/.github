@@ -6,8 +6,13 @@
   ],
   "dependencyDashboardApproval": true,
   "osvVulnerabilityAlerts": true,
+  "addLabels": ["renovate"],
   "vulnerabilityAlerts": {
     "enabled": true,
+    "dependencyDashboardApproval": false,
+    "labels": ["security", "renovate"]
+  },
+  "lockFileMaintenance": {
     "dependencyDashboardApproval": false
   }
 }
