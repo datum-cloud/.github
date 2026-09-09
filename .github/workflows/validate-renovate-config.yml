@@ -1,0 +1,24 @@
+name: Validate Renovate config
+
+on:
+  pull_request:
+    paths:
+      - renovate-config.json
+      - renovate.json
+      - bin/validate-renovate-config
+      - .github/workflows/validate-renovate-config.yml
+  push:
+    branches:
+      - main
+    paths:
+      - renovate-config.json
+      - renovate.json
+      - bin/validate-renovate-config
+      - .github/workflows/validate-renovate-config.yml
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./bin/validate-renovate-config

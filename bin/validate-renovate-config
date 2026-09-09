@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+files=()
+for candidate in renovate-config.json renovate.json; do
+  [ -f "$candidate" ] && files+=("$candidate")
+done
+
+if [ ${#files[@]} -eq 0 ]; then
+  echo "no renovate config files found; nothing was validated" >&2
+  exit 1
+fi
+
+status=0
+for file in "${files[@]}"; do
+  if ! jq empty "$file" >/dev/null 2>&1; then
+    echo "$file: not strict JSON" >&2
+    status=1
+  fi
+done
+[ "$status" -eq 0 ] || exit "$status"
+
+npx --yes --package renovate -- renovate-config-validator --strict "${files[@]}"
