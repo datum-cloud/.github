@@ -16,6 +16,10 @@ on:
       - bin/validate-renovate-config
       - .github/workflows/validate-renovate-config.yml
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (startsWith(github.ref, 'refs/heads/') && github.ref != format('refs/heads/{0}', github.event.repository.default_branch)) }}
+
 jobs:
   validate:
     runs-on: ubuntu-latest
