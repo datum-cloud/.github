@@ -20,6 +20,11 @@
       "matchDepNames": ["/^(docker\\.io/)?(library/)?node$/"],
       "groupName": "Node.js",
       "dependencyDashboardApproval": false
+    },
+    {
+      "description": "Run go mod tidy after a Go module update, so go.sum gains the hashes the new versions need and loses the ones nothing uses.",
+      "matchManagers": ["gomod"],
+      "postUpdateOptions": ["gomodTidy"]
     }
   ]
 }
