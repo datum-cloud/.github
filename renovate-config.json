@@ -25,6 +25,13 @@
       "groupSlug": "go-modules-minor-patch"
     },
     {
+      "description": "Do not propose k8s.io/kube-openapi revisions on their own. A new revision can require a structured-merge-diff major that the pinned k8s.io/apimachinery cannot build against, which fails every Go modules group it joins. go mod tidy moves it when the k8s.io modules move.",
+      "matchManagers": ["gomod"],
+      "matchPackageNames": ["k8s.io/kube-openapi"],
+      "matchUpdateTypes": ["digest"],
+      "enabled": false
+    },
+    {
       "description": "Group every npm package minor and patch update in a repository into one pull request, so the dashboard asks for one approval per repository instead of one per package.",
       "matchManagers": ["npm", "bun"],
       "matchDatasources": ["npm"],
