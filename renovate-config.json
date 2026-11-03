@@ -17,6 +17,22 @@
   },
   "packageRules": [
     {
+      "description": "Group every Go module minor and patch update in a repository into one pull request, so the dashboard asks for one approval per repository instead of one per module.",
+      "matchManagers": ["gomod"],
+      "matchDatasources": ["go"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "groupName": "Go modules (minor and patch)",
+      "groupSlug": "go-modules-minor-patch"
+    },
+    {
+      "description": "Group every npm package minor and patch update in a repository into one pull request, so the dashboard asks for one approval per repository instead of one per package.",
+      "matchManagers": ["npm", "bun"],
+      "matchDatasources": ["npm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "npm packages (minor and patch)",
+      "groupSlug": "npm-minor-patch"
+    },
+    {
       "matchDepNames": ["/^(docker\\.io/)?(library/)?node$/"],
       "groupName": "Node.js",
       "dependencyDashboardApproval": false
