@@ -1,11 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Datum's shared dependency update policy. Updates are listed on each repository's dependency dashboard and open a pull request only when someone asks for them. Security fixes are exempt and open on their own, for the language ecosystems GitHub advisories and OSV cover. Docker tags and Helm charts have no advisory feed in either source, so a security fix for an image or a chart arrives as an ordinary dashboard entry and depends on someone reviewing that dashboard. Every Node.js runtime release is also exempt and arrives as one pull request per repository, so a Node security release or end of life never waits on a dashboard.",
+  "description": "Datum's shared dependency update policy. Updates are listed on each repository's dependency dashboard and open a pull request only when someone asks for them. Security fixes are exempt and open on their own, for the language ecosystems GitHub advisories and OSV cover. Docker tags and Helm charts have no advisory feed in either source, so a security fix for an image or a chart arrives as an ordinary dashboard entry and depends on someone reviewing that dashboard. Every Node.js runtime release is also exempt and arrives as one pull request per repository, so a Node security release or end of life never waits on a dashboard. npm lockfile updates rewrite tarball URLs to the configured registry's host, because npm 12 refuses tarballs from any other host, and keep each repository's own .npmrc.",
   "extends": [
     "config:recommended"
   ],
   "dependencyDashboardApproval": true,
   "osvVulnerabilityAlerts": true,
+  "npmrc": "replace-registry-host=always",
+  "npmrcMerge": true,
   "addLabels": ["renovate"],
   "vulnerabilityAlerts": {
     "enabled": true,
@@ -38,6 +40,12 @@
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "npm packages (minor and patch)",
       "groupSlug": "npm-minor-patch"
+    },
+    {
+      "description": "Bump the range of an npm overrides entry together with its version. Renovate otherwise keeps the old range, and npm rejects the lockfile update with EOVERRIDE once the override no longer matches the version Renovate installs.",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["overrides"],
+      "rangeStrategy": "bump"
     },
     {
       "matchDepNames": ["/^(docker\\.io/)?(library/)?node$/"],
