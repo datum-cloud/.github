@@ -48,6 +48,14 @@
       "rangeStrategy": "bump"
     },
     {
+      "description": "Do not propose a major update for an overrides entry keyed with a version selector, such as \"react-router@<6.30.6\": \"^6.30.6\". That entry is a security floor that lifts old copies to a patched release on the same major; raising its value to the next major forces every copy onto it and breaks packages that still need the old major. Minor and patch updates still apply.",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["overrides", "pnpm.overrides", "pnpm-workspace.overrides"],
+      "matchDepNames": ["/^(@[^/]+\\/)?[^@/]+@/"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
       "matchDepNames": ["/^(docker\\.io/)?(library/)?node$/"],
       "groupName": "Node.js",
       "dependencyDashboardApproval": false
