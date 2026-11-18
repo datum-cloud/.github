@@ -10,7 +10,7 @@
 # Note: an organization cannot supply a default CODEOWNERS. This file governs
 # this repository only. Per-repository coverage is tracked separately.
 
-* @datum-cloud/engineering
+* @datum-cloud/sre
 
 # Public organization landing page — marketing content, not engineering.
 /profile/ @datum-cloud/gtm
@@ -20,7 +20,7 @@
 
 # Contribution and licensing commitments. These are legal text and should not be
 # reviewed by whoever is next in the rotation.
-/CLA.md             @ecv
-/CONTRIBUTING.md    @ecv
-/CODE_OF_CONDUCT.md @ecv
-/LICENSE            @ecv
+/CLA.md             @datum-cloud/sre
+/CONTRIBUTING.md    @datum-cloud/sre
+/CODE_OF_CONDUCT.md @datum-cloud/sre
+/LICENSE            @datum-cloud/sre
