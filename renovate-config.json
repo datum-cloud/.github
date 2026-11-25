@@ -85,12 +85,13 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Read a version kept in a Taskfile, Makefile or workflow variable whose name ends in VERSION, when the line above it names the source: # renovate: datasource=<datasource> depName=<name>, optionally followed by packageName=<name> and versioning=<scheme>.",
+      "description": "Read a version kept in a Taskfile, Makefile, workflow or golangci-lint custom build (.custom-gcl.yml) variable whose name ends in VERSION, when the line above it names the source: # renovate: datasource=<datasource> depName=<name>, optionally followed by packageName=<name> and versioning=<scheme>.",
       "managerFilePatterns": [
         "/(^|/)Taskfile[^/]*\\.ya?ml$/",
         "/(^|/)(GNU)?[Mm]akefile$/",
         "/\\.mk$/",
-        "/(^|/)\\.github/workflows/[^/]+\\.ya?ml$/"
+        "/(^|/)\\.github/workflows/[^/]+\\.ya?ml$/",
+        "/(^|/)\\.custom-gcl\\.ya?ml$/"
       ],
       "matchStrings": [
         "#\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)(?:\\s+packageName=(?<packageName>\\S+))?(?:\\s+versioning=(?<versioning>\\S+))?\\s*\\n\\s*[A-Za-z0-9_-]*(?:VERSION|version)\\s*(?::|\\?=|:=|=)\\s*[\"']?(?<currentValue>[^\"'\\s@]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
