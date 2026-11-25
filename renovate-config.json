@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Datum's shared dependency update policy. Updates are listed on each repository's dependency dashboard and open a pull request only when someone asks for them. Security fixes are exempt and open on their own, for the language ecosystems GitHub advisories and OSV cover. Docker tags and Helm charts have no advisory feed in either source, so a security fix for an image or a chart arrives as an ordinary dashboard entry and depends on someone reviewing that dashboard. Every Node.js runtime release is also exempt and arrives as one pull request per repository, so a Node security release or end of life never waits on a dashboard. npm lockfile updates rewrite tarball URLs to the configured registry's host, because npm 12 refuses tarballs from any other host, and keep each repository's own .npmrc.",
+  "description": "Datum's shared dependency update policy. Updates are listed on each repository's dependency dashboard and open a pull request only when someone asks for them. Security fixes are exempt and open on their own, for the language ecosystems GitHub advisories and OSV cover. Docker tags and Helm charts have no advisory feed in either source, so a security fix for an image or a chart arrives as an ordinary dashboard entry and depends on someone reviewing that dashboard. Every Node.js runtime release is also exempt and arrives as one pull request per repository, so a Node security release or end of life never waits on a dashboard. The Go toolchain is exempt in the same way, so a security fix that needs a newer Go has a toolchain pull request to land first. npm lockfile updates rewrite tarball URLs to the configured registry's host, because npm 12 refuses tarballs from any other host, and keep each repository's own .npmrc.",
   "extends": [
     "config:recommended"
   ],
@@ -64,6 +64,37 @@
       "description": "Run go mod tidy after a Go module update, so go.sum gains the hashes the new versions need and loses the ones nothing uses.",
       "matchManagers": ["gomod"],
       "postUpdateOptions": ["gomodTidy"]
+    },
+    {
+      "description": "Move the Go toolchain as one pull request per repository, opened without waiting for approval: the go.mod toolchain line, golang build images, the Go that setup-go installs, golangci-lint and chainsaw. golangci-lint refuses a module whose toolchain is newer than the Go it was built with, and older chainsaw releases do not build on a newer Go, so moving any one of them alone fails CI. The go.mod go line is not in this group, and Renovate never proposes it: it sets runtime defaults and, in a library, the minimum Go of every importer, so it moves in a change of its own or when go get raises it for a dependency.",
+      "matchDepNames": [
+        "go",
+        "/^(docker\\.io/)?(library/)?golang$/",
+        "golangci/golangci-lint",
+        "/^github\\.com/golangci/golangci-lint(/v\\d+)?(/cmd/golangci-lint)?$/",
+        "kyverno/chainsaw",
+        "github.com/kyverno/chainsaw",
+        "kyverno/action-install-chainsaw"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Go toolchain",
+      "groupSlug": "go-toolchain",
+      "dependencyDashboardApproval": false
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Read a version kept in a Taskfile, Makefile or workflow variable whose name ends in VERSION, when the line above it names the source: # renovate: datasource=<datasource> depName=<name>, optionally followed by packageName=<name> and versioning=<scheme>.",
+      "managerFilePatterns": [
+        "/(^|/)Taskfile[^/]*\\.ya?ml$/",
+        "/(^|/)(GNU)?[Mm]akefile$/",
+        "/\\.mk$/",
+        "/(^|/)\\.github/workflows/[^/]+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "#\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)(?:\\s+packageName=(?<packageName>\\S+))?(?:\\s+versioning=(?<versioning>\\S+))?\\s*\\n\\s*[A-Za-z0-9_-]*(?:VERSION|version)\\s*(?::|\\?=|:=|=)\\s*[\"']?(?<currentValue>[^\"'\\s@]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
+      ]
     }
   ]
 }
