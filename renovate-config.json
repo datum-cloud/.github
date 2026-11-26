@@ -24,7 +24,7 @@
       "matchManagers": ["gomod"],
       "matchDatasources": ["go"],
       "matchUpdateTypes": ["minor"],
-      "groupName": "Go modules (minor)",
+      "groupName": "Go modules",
       "groupSlug": "go-modules-minor"
     },
     {
@@ -32,7 +32,7 @@
       "matchManagers": ["gomod"],
       "matchDatasources": ["go"],
       "matchUpdateTypes": ["patch", "digest"],
-      "groupName": "Go modules (patch)",
+      "groupName": "Go modules",
       "groupSlug": "go-modules-patch"
     },
     {
@@ -47,7 +47,7 @@
       "matchManagers": ["npm", "bun"],
       "matchDatasources": ["npm"],
       "matchUpdateTypes": ["minor"],
-      "groupName": "npm packages (minor)",
+      "groupName": "npm packages",
       "groupSlug": "npm-minor"
     },
     {
@@ -55,7 +55,7 @@
       "matchManagers": ["npm", "bun"],
       "matchDatasources": ["npm"],
       "matchUpdateTypes": ["patch"],
-      "groupName": "npm packages (patch)",
+      "groupName": "npm packages",
       "groupSlug": "npm-patch"
     },
     {
