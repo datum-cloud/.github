@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Datum's shared dependency update policy. Updates are listed on each repository's dependency dashboard and open a pull request only when someone asks for them. Security fixes are exempt and open on their own, for the language ecosystems GitHub advisories and OSV cover. Docker tags and Helm charts have no advisory feed in either source, so a security fix for an image or a chart arrives as an ordinary dashboard entry and depends on someone reviewing that dashboard. Every Node.js runtime release is also exempt and arrives as one pull request per repository, so a Node security release or end of life never waits on a dashboard. The Go toolchain is exempt in the same way, so a security fix that needs a newer Go has a toolchain pull request to land first. npm lockfile updates rewrite tarball URLs to the configured registry's host, because npm 12 refuses tarballs from any other host, and keep each repository's own .npmrc.",
+  "description": "Datum's shared dependency update policy. Patch, pin and digest updates, and minor updates of GitHub Actions and pinned CI tools, open a pull request on their own after a three-day hold. Other minor and major updates are listed on each repository's dependency dashboard and open a pull request only when someone asks for them. Security fixes are exempt and open on their own, for the language ecosystems GitHub advisories and OSV cover. Docker tags and Helm charts have no advisory feed in either source, so a security fix for an image or a chart arrives as an ordinary dashboard entry and depends on someone reviewing that dashboard. Every Node.js runtime release is also exempt and arrives as one pull request per repository, so a Node security release or end of life never waits on a dashboard. The Go toolchain is exempt in the same way, so a security fix that needs a newer Go has a toolchain pull request to land first. npm lockfile updates rewrite tarball URLs to the configured registry's host, because npm 12 refuses tarballs from any other host, and keep each repository's own .npmrc.",
   "extends": [
     "config:recommended"
   ],
@@ -92,7 +92,7 @@
         "github.com/kyverno/chainsaw",
         "kyverno/action-install-chainsaw"
       ],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchUpdateTypes": ["minor", "patch", "digest", "pinDigest"],
       "groupName": "Go toolchain",
       "groupSlug": "go-toolchain",
       "dependencyDashboardApproval": false
@@ -121,7 +121,7 @@
       "dependencyDashboardApproval": false
     },
     {
-      "description": "Hold a new patch, pin or digest three days before it opens, so a bad release is usually withdrawn before anyone sees it. Security fixes skip the wait, because Renovate's vulnerability settings override package rules, and so do Node.js and the Go toolchain, whose security releases carry no advisory Renovate reads. A digest often has no publish time, so it is held only when the registry reports one.",
+      "description": "Hold a new patch, pin or digest three days before it opens, so a bad release is usually withdrawn before anyone sees it. Security fixes skip the wait, because Renovate's vulnerability settings override package rules. Node.js and the Go toolchain skip it too, since their security releases carry no advisory Renovate reads. A digest often has no publish time, so it is held only when the registry reports one.",
       "matchDepNames": [
         "!go",
         "!/^(docker\\.io/)?(library/)?golang$/",
@@ -135,6 +135,22 @@
       "matchUpdateTypes": ["patch", "pin", "digest", "pinDigest"],
       "minimumReleaseAge": "3 days",
       "minimumReleaseAgeBehaviour": "timestamp-optional"
+    },
+    {
+      "description": "Hold minor updates of GitHub Actions and pinned CI tools three days as well, since they open without approval like patches do.",
+      "matchManagers": ["github-actions", "custom.regex"],
+      "matchDepNames": [
+        "!go",
+        "!/^(docker\\.io/)?(library/)?golang$/",
+        "!/^(docker\\.io/)?(library/)?node$/",
+        "!golangci/golangci-lint",
+        "!/^github\\.com/golangci/golangci-lint(/v\\d+)?(/cmd/golangci-lint)?$/",
+        "!kyverno/chainsaw",
+        "!github.com/kyverno/chainsaw",
+        "!kyverno/action-install-chainsaw"
+      ],
+      "matchUpdateTypes": ["minor"],
+      "minimumReleaseAge": "3 days"
     }
   ],
   "customManagers": [
