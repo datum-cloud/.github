@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Datum's shared dependency update policy. Updates are listed on each repository's dependency dashboard and open a pull request only when someone asks for them. Security fixes are exempt and open on their own, for the language ecosystems GitHub advisories and OSV cover. Docker tags and Helm charts have no advisory feed in either source, so a security fix for an image or a chart arrives as an ordinary dashboard entry and depends on someone reviewing that dashboard. Every Node.js runtime release is also exempt and arrives as one pull request per repository, so a Node security release or end of life never waits on a dashboard. The Go toolchain is exempt in the same way, so a security fix that needs a newer Go has a toolchain pull request to land first. npm lockfile updates rewrite tarball URLs to the configured registry's host, because npm 12 refuses tarballs from any other host, and keep each repository's own .npmrc.",
+  "description": "Datum's shared dependency update policy. Patch, pin and digest updates, and minor updates of GitHub Actions and pinned CI tools, open a pull request on their own after a two-day hold. Other minor and major updates are listed on each repository's dependency dashboard and open a pull request only when someone asks for them. Security fixes are exempt and open on their own, for the language ecosystems GitHub advisories and OSV cover. Docker tags and Helm charts have no advisory feed in either source, so a security fix for an image or a chart arrives as an ordinary dashboard entry and depends on someone reviewing that dashboard. Every Node.js runtime release is also exempt and arrives as one pull request per repository, so a Node security release or end of life never waits on a dashboard. The Go toolchain is exempt in the same way, so a security fix that needs a newer Go has a toolchain pull request to land first. npm lockfile updates rewrite tarball URLs to the configured registry's host, because npm 12 refuses tarballs from any other host, and keep each repository's own .npmrc.",
   "extends": [
     "config:recommended"
   ],
@@ -19,12 +19,20 @@
   },
   "packageRules": [
     {
-      "description": "Group every Go module minor and patch update in a repository into one pull request, so the dashboard asks for one approval per repository instead of one per module.",
+      "description": "Group every Go module minor update in a repository into one pull request, so the dashboard asks for one approval per repository instead of one per module.",
       "matchManagers": ["gomod"],
       "matchDatasources": ["go"],
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "groupName": "Go modules (minor and patch)",
-      "groupSlug": "go-modules-minor-patch"
+      "matchUpdateTypes": ["minor"],
+      "groupName": "Go modules (minor)",
+      "groupSlug": "go-modules-minor"
+    },
+    {
+      "description": "Group every Go module patch and digest update in a repository into one pull request of its own, so the low-risk rule below can open it without waiting for the minor updates' approval.",
+      "matchManagers": ["gomod"],
+      "matchDatasources": ["go"],
+      "matchUpdateTypes": ["patch", "digest"],
+      "groupName": "Go modules (patch)",
+      "groupSlug": "go-modules-patch"
     },
     {
       "description": "Do not propose k8s.io/kube-openapi revisions on their own. A new revision can require a structured-merge-diff major that the pinned k8s.io/apimachinery cannot build against, which fails every Go modules group it joins. go mod tidy moves it when the k8s.io modules move.",
@@ -34,12 +42,20 @@
       "enabled": false
     },
     {
-      "description": "Group every npm package minor and patch update in a repository into one pull request, so the dashboard asks for one approval per repository instead of one per package.",
+      "description": "Group every npm package minor update in a repository into one pull request, so the dashboard asks for one approval per repository instead of one per package.",
       "matchManagers": ["npm", "bun"],
       "matchDatasources": ["npm"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "npm packages (minor and patch)",
-      "groupSlug": "npm-minor-patch"
+      "matchUpdateTypes": ["minor"],
+      "groupName": "npm packages (minor)",
+      "groupSlug": "npm-minor"
+    },
+    {
+      "description": "Group every npm package patch update in a repository into one pull request of its own, so the low-risk rule below can open it without waiting for the minor updates' approval.",
+      "matchManagers": ["npm", "bun"],
+      "matchDatasources": ["npm"],
+      "matchUpdateTypes": ["patch"],
+      "groupName": "npm packages (patch)",
+      "groupSlug": "npm-patch"
     },
     {
       "description": "Bump the range of an npm overrides entry together with its version. Renovate otherwise keeps the old range, and npm rejects the lockfile update with EOVERRIDE once the override no longer matches the version Renovate installs.",
@@ -76,10 +92,78 @@
         "github.com/kyverno/chainsaw",
         "kyverno/action-install-chainsaw"
       ],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchUpdateTypes": ["minor", "patch", "digest", "pinDigest"],
       "groupName": "Go toolchain",
       "groupSlug": "go-toolchain",
       "dependencyDashboardApproval": false
+    },
+    {
+      "description": "Low-risk updates open without waiting for approval: patch releases, pins and digests in every ecosystem, including Go modules, npm packages, container images, Helm charts, Rust crates, GitHub Actions and the tools pinned in Taskfiles, Makefiles and workflows. Renovate merges each one itself once a person approves it and every check on the branch is green. It merges rather than GitHub auto-merge, because a repository that requires no status checks would otherwise merge on the approval alone, before CI finishes. Minor and major updates stay behind the dashboard.",
+      "matchUpdateTypes": ["patch", "pin", "digest", "pinDigest"],
+      "dependencyDashboardApproval": false,
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "merge-commit",
+      "platformAutomerge": false
+    },
+    {
+      "description": "GitHub Actions and the CI tools pinned in Taskfiles, Makefiles and workflows also open their minor updates without approval, grouped into one pull request per repository. A broken CI tool fails the pull request that moves it, so the risk stays in CI rather than in what ships. The Go toolchain pins keep their own group above.",
+      "matchManagers": ["github-actions", "custom.regex"],
+      "matchDepNames": [
+        "!go",
+        "!/^(docker\\.io/)?(library/)?golang$/",
+        "!/^(docker\\.io/)?(library/)?node$/",
+        "!golangci/golangci-lint",
+        "!/^github\\.com/golangci/golangci-lint(/v\\d+)?(/cmd/golangci-lint)?$/",
+        "!kyverno/chainsaw",
+        "!github.com/kyverno/chainsaw",
+        "!kyverno/action-install-chainsaw"
+      ],
+      "matchUpdateTypes": ["minor", "patch", "digest", "pinDigest"],
+      "groupName": "CI and build tools",
+      "groupSlug": "ci-tools",
+      "dependencyDashboardApproval": false,
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "merge-commit",
+      "platformAutomerge": false
+    },
+    {
+      "description": "Hold a new patch, pin or digest two days before it opens, so a bad release is usually withdrawn before anyone sees it. Security fixes skip the wait, because Renovate's vulnerability settings override package rules. Node.js and the Go toolchain skip it too, since their security releases carry no advisory Renovate reads. A digest often has no publish time, so it is held only when the registry reports one.",
+      "matchDepNames": [
+        "!go",
+        "!/^(docker\\.io/)?(library/)?golang$/",
+        "!/^(docker\\.io/)?(library/)?node$/",
+        "!golangci/golangci-lint",
+        "!/^github\\.com/golangci/golangci-lint(/v\\d+)?(/cmd/golangci-lint)?$/",
+        "!kyverno/chainsaw",
+        "!github.com/kyverno/chainsaw",
+        "!kyverno/action-install-chainsaw"
+      ],
+      "matchUpdateTypes": ["patch", "pin", "digest", "pinDigest"],
+      "minimumReleaseAge": "2 days",
+      "minimumReleaseAgeBehaviour": "timestamp-optional"
+    },
+    {
+      "description": "Hold minor updates of GitHub Actions and pinned CI tools two days as well, since they open without approval like patches do.",
+      "matchManagers": ["github-actions", "custom.regex"],
+      "matchDepNames": [
+        "!go",
+        "!/^(docker\\.io/)?(library/)?golang$/",
+        "!/^(docker\\.io/)?(library/)?node$/",
+        "!golangci/golangci-lint",
+        "!/^github\\.com/golangci/golangci-lint(/v\\d+)?(/cmd/golangci-lint)?$/",
+        "!kyverno/chainsaw",
+        "!github.com/kyverno/chainsaw",
+        "!kyverno/action-install-chainsaw"
+      ],
+      "matchUpdateTypes": ["minor"],
+      "minimumReleaseAge": "2 days"
+    },
+    {
+      "description": "datum-fpa merges without an approval, so Renovate must not merge there on its own.",
+      "matchRepositories": ["datum-cloud/datum-fpa"],
+      "automerge": false
     }
   ],
   "customManagers": [
